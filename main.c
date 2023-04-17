@@ -66,14 +66,27 @@ int main()
     }
 
     // check if the password meets the criteria for a strong password
-    if (has_upper && has_symbol && has_lower && has_digit)
+    while (len > 8)
     {
-        printf("Password is strong - You can login!\n");
+        printf("Your Password is Too Long....\n");
+        break;
     }
-    // handle the case where the password is not strong enough
-    else
+    while (len < 8)
     {
-        printf("Password is weak - Make it stronger.\n");
+        printf("You Password is too Short .....\n");
+        break;
+    }
+    while (len == 8)
+    {
+        if (has_upper && has_symbol && has_lower && has_digit)
+        {
+            printf("Password is strong - You can login!\n");
+        }
+        else
+        {
+            printf("Pls Enter with special char..\n");
+        }
+        break;
     }
 
     // return 0 to indicate successful program execution
